@@ -54,15 +54,9 @@ int selectedIndex = 0;
 final PageController controller = PageController();
 double percent = 0;
 List<JourneyItemData> list = [];
-var item1 = JourneyItemData.createNew(
-    "One", "https://assets6.lottiefiles.com/packages/lf20_FhFjqS.json", "", "");
-var item2 = JourneyItemData.createNew(
-    "Two", "https://assets6.lottiefiles.com/packages/lf20_boJRmE.json", "", "");
-var item3 = JourneyItemData.createNew(
-    "Three",
-    "https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json",
-    "",
-    "");
+var item1 = JourneyItemData.createNew("One", "jsons/intro.json", "", "");
+var item2 = JourneyItemData.createNew("Two", "jsons/watchlist.json", "", "");
+var item3 = JourneyItemData.createNew("Three", "jsons/intro.json", "", "");
 
 class _MigrationPagerWidgetState extends State<MigrationPagerWidget> {
   @override
@@ -159,7 +153,7 @@ Widget pagerItem(JourneyItemData item) {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       /*Text('Page ${item.title}'),*/
-      Expanded(child: Lottie.network(item.url, repeat: false)),
+      Expanded(child: Lottie.asset(item.url, repeat: false)),
     ],
   );
 }
